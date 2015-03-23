@@ -91,7 +91,7 @@ h3 {
 </nav>
 <h2>Add a new user:</h2>
 
-<form method='post' action='/users/add_user'>
+<form method='post' action='/admins/add_user'>
   <div class="form-group">
     <label for="firstname">First Name</label>
     <input type="text" class="form-control" id="firstname" placeholder="First name">

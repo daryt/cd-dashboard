@@ -3,6 +3,11 @@
 $route['default_controller'] = "mains";
 $route['404_override'] = '';
 $route['admin'] = "admins";
+$route['register'] = "users/register";
+$route['add_user'] = "admins/add_user";
+$route['sign_in'] = "users/sign_in";
+$route['edit_profile_user'] = "users/edit_profile_user";
+$route['edit_profile_admin'] = "admins/edit_profile_admin";
 
 
 //end of routes.php

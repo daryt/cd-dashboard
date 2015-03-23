@@ -8,6 +8,16 @@ class Admins extends CI_Controller {
   {
     $this->load->view('admin');
   }
+
+    public function add_user()
+  {
+    $this->load->view('add_user');
+  }
+
+  public function edit_profile_admin()
+  {
+    $this->load->view('edit_profile_admin');
+  }
 }
 
 //end of main controller
