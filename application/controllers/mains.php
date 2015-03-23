@@ -8,6 +8,12 @@ class Mains extends CI_Controller {
 	{
 		$this->load->view('mains');
 	}
+
+  public function notes()
+  {
+    $this->load->view('notes');
+  }
 }
+
 
 //end of main controller

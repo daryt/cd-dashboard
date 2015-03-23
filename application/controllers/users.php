@@ -17,4 +17,11 @@ class Users extends CI_Controller {
     $this->load->view('edit_profile_user');
   }
 
+  public function index()
+  {
+    $this->load->view('dashboard');
+  }
 }
+
+//end of main controller
+
