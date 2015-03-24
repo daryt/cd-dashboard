@@ -10,14 +10,14 @@
     <link href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
 </head>
-<body>
+<body background="/assets/background3.jpg">
 
 <style>
 
 #navbar {
-  height: 70px;
+  height: 65px;
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .form-group {
@@ -50,7 +50,7 @@
 
 h2 {
 position: relative;
-right: 150px;
+left: 40px;
 top: 20px;
 }
 
@@ -60,10 +60,9 @@ h3 {
 }
 
 #return {
-float: right;
 position: relative;
-right: 83px;
-top: 15px; 
+top: 120px;
+left: 195px;
 }
 
 .edit {
@@ -104,25 +103,47 @@ textarea {
   left: 740px;
   bottom: 35px;
 }
+
+.topright, .topright1 {
+  float: right;
+  display: inline-block;
+  position: relative;
+  top: 23px;
+  padding: 0px 10px 0px 10px;
+  font-size: 16px;
+}
+
+.topright1 {
+  border-right: solid 1px white;
+}
+
+.barlink {
+  display: inline-block;
+  position: relative;
+  left: 110px;
+  bottom: 33px;
+  font-size: 16px;
+  color: gray;
+}
 </style>
 
-<nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
- 	<div class="container">
+<body>
+    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
         <div class="navbar-header">
-          <h3>Profile |</h3>
-          	<a class="navbar-brand" href="#">Dashboard</a>
-            <a href="#" class="navbar-brand">Users</a>
+            <h3>Welcome |</h3>
+            <a href="#" class='barlink'>Edit</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <a href="#" class="topright">Log off</a>
-          </form>
+            <a href="register" class="topright">Register</a>
+            <a href="sign_in" class="topright1">Log-off</a>
         </div>
     </div>
 </nav>
-<h2>Edit -USER_ID- profile:</h2>
+
 
   <div class="row">
+    <h2>Edit -USER_ID- profile:</h2>
       <div id="border" class="col-md-6">
           <div class="form-group">
             <form method='post' action='/admins/edit_profile_admin'>
@@ -158,10 +179,11 @@ textarea {
           <label for="passwordconfirm">Confirm Password</label>
           <input type="password" class="form-control" id="passwordconfirm" placeholder="Confirm password">
           <p><a id="signin2" class="btn btn-success btn-default" href="#" role="button">Change Password</a></p>
+          <p><a id="return" class="btn btn-primary btn-default" href="#" role="button">Return to Dashboard</a></p>
         </div>
     </div>
   </div>
-      <p><a id="return" class="btn btn-primary btn-default" href="#" role="button">Return to Dashboard</a></p>
+      
 
 <!--     <p><a id="signin" class="btn btn-success btn-default" href="#" role="button">Update Info</a></p> -->
 

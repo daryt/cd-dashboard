@@ -11,31 +11,66 @@
     <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
+  <style>
+#navbar {
+  height: 65px;
+}
+
+h3 {
+  color: white;
+  font-weight: 100;
+}
+.form-group {
+  position: relative;
+  top: 120px;
+  width: 350px;
+  margin-left: 100px;
+}
+
+.navbar-brand {
+  position: relative;
+  left:  112px;
+  bottom: 47px;
+}
+
+
+.topright, .topright1 {
+  float: right;
+  display: inline-block;
+  position: relative;
+  top: 23px;
+  padding: 0px 10px 0px 10px;
+  font-size: 16px;
+}
+
+.topright1 {
+  border-right: solid 1px white;
+}
+
+.barlink {
+  display: inline-block;
+  position: relative;
+  left: 110px;
+  bottom: 33px;
+  font-size: 16px;
+  color: gray;
+}
+
+</style>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+
+    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
+            <h3>Welcome |</h3>
+            <a href="#" class='barlink'>Management</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
+            <a href="register" class="topright">Register</a>
+            <a href="sign_in" class="topright1">Log-off</a>
+        </div>
+    </div>
+</nav>
 
     <div class="container buffer">
       <div class="starter-template">

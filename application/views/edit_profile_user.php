@@ -7,17 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Dashboard">
     <!-- Bootstrap core CSS -->
-    <link href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
+    <link href="/assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
 </head>
-<body>
+<body background="/assets/background3.jpg">
 
 <style>
 
 #navbar {
-  height: 70px;
-  position: relative;
-  font-size: 18px;
+  height: 65px;
 }
 
 .form-group {
@@ -49,9 +47,7 @@
 }
 
 h2 {
-position: relative;
-right: 150px;
-top: 20px;
+
 }
 
 h3 {
@@ -104,24 +100,44 @@ textarea {
   left: 740px;
   bottom: 35px;
 }
+.topright, .topright1 {
+  float: right;
+  display: inline-block;
+  position: relative;
+  top: 23px;
+  padding: 0px 10px 0px 10px;
+  font-size: 16px;
+}
+
+.topright1 {
+  border-right: solid 1px white;
+}
+
+.barlink {
+  display: inline-block;
+  position: relative;
+  left: 110px;
+  bottom: 33px;
+  font-size: 16px;
+  color: gray;
+}
 </style>
 
-<nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
- 	<div class="container">
+    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
         <div class="navbar-header">
-          <h3>Profile |</h3>
-          	<a class="navbar-brand" href="#">Dashboard</a>
-            <a class="navbar-brand" href="#">Users</a>
+            <h3>Welcome |</h3>
+            <a href="#" class='barlink'>Home</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <a href="#" class="topright">Log off</a>
-          </form>
+            <a href="register" class="topright">Register</a>
+            <a href="sign_in" class="topright1">Login</a>
         </div>
     </div>
 </nav>
-<h2>Edit profile:</h2>
+ <div class="container"> 
   <div class="row">
+    <p class="add">Edit profile:</p>
       <div id="border" class="col-md-6">
           <div class="form-group">
             <form method='post' action='/users/edit_profile_user'>
@@ -159,7 +175,7 @@ textarea {
   <p><a id="update" class="btn btn-success btn-default" href="#" role="button">Update</a></p>
 </div>
 </form>
-
+</div>
 
 </body>
 </html>

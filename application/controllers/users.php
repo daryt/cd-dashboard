@@ -4,13 +4,51 @@ class Users extends CI_Controller {
 
   public function register()
   {
-    $this->load->view('register');
+    $this->load->library("form_validation");
+    $this->form_validation->set_rules("first_name", "First Name", "required");
+    $this->form_validation->set_rules("last_name", "Last Name", "required");
+    $this->form_validation->set_rules("email", "Email address", "required|is_unique[users.email]");
+    $this->form_validation->set_rules("password", "Password", "required|min_length[8]|matches[passwordconfirm]");
+    $this->form_validation->set_rules("passwordconfirm", "Password confirm", "required");
+    if($this->form_validation->run() === FALSE)
+    {
+      $this->load->view('register');
+    }
+    else
+    {
+      $result = $this->user->userCreate($this->input->post()); //passing registration info to model
+      $this->load->view('edit_profile_user');
+    }
   }
 
-    public function sign_in()
-  {
-    $this->load->view('sign_in');
-  }
+    public function sign_in_view()
+    {
+      $this->load->view('sign_in');
+    }
+
+    public function sign_in_user()
+    {
+      
+      $email = $this->input->post('email');
+      $password = $this->input->post('password');
+      $user = $this->user->getUserEmail($email);
+      if ($user && $user['password'] == $password)
+      {
+        $user = array(
+          'user_id' => $user['id'],
+          'email' => $user['email'],
+          'first_name' => $user['first_name'],
+          'last_name' => $user['last_name'],
+          'logged_in' => true);
+        // $result = $this->user->getUserEmail($this->input->post());
+        $this->load->view('edit_profile_user', $user);
+      }
+      else
+      {
+        $this->session->set_flashdata("login_error", "Invalid email address and/or password");
+        redirect('/sign_in');
+      }
+    }
 
   	public function edit_profile_user()
   {
