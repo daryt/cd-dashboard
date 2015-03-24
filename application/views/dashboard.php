@@ -46,6 +46,8 @@
             <th>Name</th>
             <th>Email</th>
             <th>Created At</th>
+
+            <th>User Level</th>
           </tr>
 <?php
         foreach ($users as $user)
@@ -57,6 +59,8 @@
             <td><a href="/user/edit/<?= $user['id']; ?>"><?=$user['first_name']." ".$user['last_name']  ?></a></td>
             <td><?=$user['email'] ?></td>
             <td><?=$user['created_at'] ?></td>
+            <td><?=$user['user_level'] ?></td>
+
           </tr>
 <?php
 }

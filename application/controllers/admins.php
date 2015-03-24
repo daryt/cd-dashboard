@@ -42,6 +42,12 @@ class Admins extends CI_Controller {
     redirect("/admin");
   }
 
+  public function updateUserPasswordAdmin() {
+    $this->load->model('admin');
+    $result = $this->admin->updateUserPasswordAdmin($this->input->post());
+    redirect("/admin");
+  }
+
 
 }
 

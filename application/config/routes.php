@@ -17,6 +17,8 @@ $route['user/edit/(:num)'] = 'users/edit_profile_user/$1';
 $route['update_profile_user'] = 'users/updateProfileUser';
 $route['update_user_description'] = 'users/updateUserDescription';
 $route['update_user_password'] = 'users/updateUserPassword';
+$route['update_user_password_admin'] = 'admins/updateUserPasswordAdmin';
+
 
 
 

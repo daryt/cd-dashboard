@@ -28,6 +28,13 @@ class Admin extends CI_Model {
     return $result;
   }
 
+  public function updateUserPasswordAdmin($user) {
+    $data = array('password' => $user['password']);
+    $where = "id =".$user['id']."";
+    $query = $this->db->update_string('users', $data, $where);
+    $result = $this->db->query($query);
+    return $result;
+  }
 }
 
 //end of main controller

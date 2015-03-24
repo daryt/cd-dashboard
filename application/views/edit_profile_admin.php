@@ -151,12 +151,13 @@ textarea {
 			  <option value="9" <?=$selected?> >Admin</option>
 			</select>
       <input type="hidden" name="id" value=<?= $user['id']; ?>>
-      <p><input class="btn btn-success btn-default" id="signin1" value="Update Info" type="submit"></p>
+      <p><input class="btn btn-success btn-default" id="signin1" value="Save" type="submit"></p>
     </form>
       </div>
   </div>
     <div class="col-md-6">
         <div class="form-group">
+          <form method="post" action='/update_user_password_admin' name="update-user-password-admin">
           <hr><p class="edit">Change Password</p>
           <label for="password">Password</label>
           <input type="password" class="form-control" name="password" placeholder="Password">
@@ -164,11 +165,12 @@ textarea {
         <div class="form-group">
           <label for="passwordconfirm">Confirm Password</label>
           <input type="password" class="form-control" name="passwordconfirm" placeholder="Confirm password">
-          <p><a id="signin2" class="btn btn-success btn-default" href="#" role="button">Change Password</a></p>
+          <input type="hidden" name="id" value="<?= $user['id'] ?>">
+          <p><input id="signin2" class="btn btn-success btn-default" id="signin1" value="Update Password" type="submit"></p>
         </div>
     </div>
   </div>
-      <p><a id="return" class="btn btn-primary btn-default" href="#" role="button">Return to Dashboard</a></p>
+      <p><a id="return" class="btn btn-primary btn-default" href="/admin" role="button">Return to Dashboard</a></p>
 
 <!--     <p><a id="signin" class="btn btn-success btn-default" href="#" role="button">Update Info</a></p> -->
 
