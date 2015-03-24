@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+  <meta charset="UTF-8">
+  <title>Remove User</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +12,9 @@
     <link href="/assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="/assets/styles.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -36,51 +38,21 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
     <div class="container buffer">
       <div class="starter-template">
-        <h2>Manage Users</h2>
-        <table class="table table-striped table-bordered">
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Created At</th>
-            <th>User Level</th>
-            <th>Actions</th>
-          </tr>
-<?php
-        foreach ($users as $user)
-        {
-          
-?>
-          <tr>
-            <td><?=$user['id'] ?></td>
-            <td><?=$user['first_name']." ".$user['last_name']  ?></td>
-            <td><?=$user['email'] ?></td>
-            <td><?=$user['created_at'] ?></td>
-            <td><?=$user['user_level'] ?></td>
-            <td><a href="/users/edit/<?= $user['id']; ?>">Edit</a>&nbsp<a href="/admin/removeUser/<?= $user['id']; ?>">Remove</a> </td>
-          </tr>
-<?php
-}
-?>
-        </table>
-      </div>
-    </div>
-      <hr>
+  <h1>Are you sure you want to remove the following user?</h1>
+  <p>Name: <?= $user['first_name'] ?></p>
+  <p class="yes">Description: <?= $user['description'] ?></p>
+  <a href="/admin/">Cancel</a>
+  <form method="post" action="/admin/deleteUser">
+    <input type="hidden" name="id" value="<?= $user['id']; ?>">
+    <input type='submit' value="Yes">
+  </form>
+</div>
+</div>
+<hr>
       <footer>
         <p>&copy; Company 2014</p>
       </footer>
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> ->
-  </body>
+</body>
 </html>
