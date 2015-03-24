@@ -13,6 +13,14 @@ $route['dashboard'] = "users";
 $route['notes'] = "mains/notes";
 $route['admin/removeUser/(:num)'] = 'admins/removeUser/$1';
 $route['admin/deleteUser'] = 'admins/deleteUser';
+$route['user/edit/(:num)'] = 'users/edit_profile_user/$1';
+$route['update_profile_user'] = 'users/updateProfileUser';
+$route['update_user_description'] = 'users/updateUserDescription';
+$route['update_user_password'] = 'users/updateUserPassword';
+
+
+
+
 
 
 
