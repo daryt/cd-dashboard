@@ -41,7 +41,7 @@ class Users extends CI_Controller {
           'last_name' => $user['last_name'],
           'logged_in' => true);
         // $result = $this->user->getUserEmail($this->input->post());
-        $this->load->view('edit_profile_user', $user);
+        redirect('/dashboard');
       }
       else
       {
