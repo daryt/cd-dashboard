@@ -7,9 +7,9 @@
     <meta name="description" content="Dashboard">
     <title>Admin Dashboard</title>
     <!-- Bootstrap core CSS -->
-    <link href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link href="/assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
+    <link rel="stylesheet" href="/assets/styles.css">
   </head>
   <style>
 #navbar {
@@ -84,30 +84,22 @@ h3 {
             <th>User Level</th>
             <th>Actions</th>
           </tr>
+<?php
+        foreach ($users as $user)
+        {
+          
+?>
           <tr>
-            <td>1</td>
-            <td>Michael Choi</td>
-            <td>michael@village88.com</td>
-            <td>Dec. 24th 2012</td>
-            <td>admin</td>
-            <td>edit remove</td>
+            <td><?=$user['id'] ?></td>
+            <td><?=$user['first_name']." ".$user['last_name']  ?></td>
+            <td><?=$user['email'] ?></td>
+            <td><?=$user['created_at'] ?></td>
+            <td><?=$user['user_level'] ?></td>
+            <td><a href="/users/edit/<?= $user['id']; ?>">Edit</a>&nbsp<a href="/admin/removeUser/<?= $user['id']; ?>">Remove</a> </td>
           </tr>
-          <tr>
-            <td>1</td>
-            <td>Michael Choi</td>
-            <td>michael@village88.com</td>
-            <td>Dec. 24th 2012</td>
-            <td>admin</td>
-            <td>edit remove</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Michael Choi</td>
-            <td>michael@village88.com</td>
-            <td>Dec. 24th 2012</td>
-            <td>admin</td>
-            <td>edit remove</td>
-          </tr>
+<?php
+}
+?>
         </table>
       </div>
     </div>

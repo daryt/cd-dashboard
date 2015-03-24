@@ -140,39 +140,51 @@ textarea {
     <p class="add">Edit profile:</p>
       <div id="border" class="col-md-6">
           <div class="form-group">
-            <form method='post' action='/users/edit_profile_user'>
+            <form method='post' action='/update_profile_user' name="user-update">
             <hr><p class="edit">Edit Info</p>
             <label for="firstname">First Name</label>
-            <input type="text" class="form-control" id="firstname" placeholder="First name">
+            <input type="text" class="form-control" name="first_name" value="<?= $user['first_name'] ?>">
           </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control" id="lastname" placeholder="Last name">
+          <input type="text" class="form-control" name="last_name" value="<?= $user['last_name'] ?>">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Email">
-          <p><a id="signin1" class="btn btn-success btn-default" href="#" role="button">Update Info</a></p>
+          <input type="email" class="form-control" name="email" value="<?= $user['email'] ?>">
+          <input type="hidden" name="id" value="<?= $user['id'] ?>">
+
+          <p><input class="btn btn-success btn-default" id="signin1" value="Save" type="submit"></p>
         </div>
+      </form>
       </div>
     <div class="col-md-6">
         <div class="form-group">
-          <hr><p class="edit">Change Password</p>
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password">
-        </div>
+          <form method="post" action='/update_user_password' name="update-user-password">
+            <hr><p class="edit">Change Password</p>
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
         <div class="form-group">
-          <label for="passwordconfirm">Confirm Password</label>
-          <input type="password" class="form-control" id="passwordconfirm" placeholder="Confirm password">
-          <p><a id="signin2" class="btn btn-success btn-default" href="#" role="button">Change Password</a></p>
+            <label for="passwordconfirm">Confirm Password</label>
+            <input type="password" class="form-control" name="passwordconfirm" placeholder="Confirm password">
+            <input type="hidden" name="id" value="<?= $user['id'] ?>">
+            <p><input id="signin2" class="btn btn-success btn-default" id="signin1" value="Change Password" type="submit"></p>
+          </form>
         </div>
     </div>
   </div>
 <!--     <p><a id="signin" class="btn btn-success btn-default" href="#" role="button">Update Info</a></p> -->
 <hr id='hr'><div id='desc' class="col-ld-12">
-  <p id='edit'>Edit desctiption:</p>
-  <textarea></textarea>
-  <p><a id="update" class="btn btn-success btn-default" href="#" role="button">Update</a></p>
+  <div class="form-group">
+    <form method="post" action="/update_user_description">
+    <p id='edit'>Edit desctiption:</p>
+    <textarea name="description"><?= $user['description'] ?>"</textarea>
+    <input type="hidden" name="id" value="<?= $user['id'] ?>">
+    <p><input class="btn btn-success btn-default" id="signin1" value="Save" type="submit"></p>
+  </form>
+</div>
+
 </div>
 </form>
 </div>
