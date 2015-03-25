@@ -32,7 +32,7 @@ class Users extends CI_Controller {
       $email = $this->input->post('email');
       $password = $this->input->post('password');
       $user = $this->user->getUserEmail($email);
-      if ($user && $user['password'] == $password)
+      if ($user && $user['password'] == $password && $user['user_level'] == 9)
       {
         $user = array(
           'user_id' => $user['id'],
@@ -40,7 +40,16 @@ class Users extends CI_Controller {
           'first_name' => $user['first_name'],
           'last_name' => $user['last_name'],
           'logged_in' => true);
-        // $result = $this->user->getUserEmail($this->input->post());
+        redirect('/admin');
+      }
+      else if ($user && $user['password'] == $password)
+      {
+        $user = array(
+          'user_id' => $user['id'],
+          'email' => $user['email'],
+          'first_name' => $user['first_name'],
+          'last_name' => $user['last_name'],
+          'logged_in' => true);
         redirect('/dashboard');
       }
       else

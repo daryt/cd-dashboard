@@ -9,6 +9,7 @@
     <!-- Bootstrap core CSS -->
     <link href="/assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
+    </head>
 <style>
 #navbar {
   height: 65px;
@@ -21,7 +22,7 @@ h3 {
 
 .form-group {
   position: relative;
-  top: 100px;
+  top: 160px;
   width: 350px;
   margin-left: 100px;
 }
@@ -31,22 +32,24 @@ h3 {
   top: 13px;
 }
 
-#signin {
-  position: relative;
-  top: 75px;
-  left: 250px;
-  margin-left: 100px;
+p.add {
+position: relative;
+left: 60px;
+top: 120px;
+font-size: 24px;
+font-weight: 500;
 }
 
-#navbar {
+#signin {
   position: relative;
-  /*top: 4px;*/
-  font-size: 16px;
+  top: 130px;
+  left: 270px;
+  margin-left: 100px;
 }
 
 #register {
   position: relative;
-  top: 100px;
+  top: 155px;
   left: 105px;
   font-size: 12px;
 }
@@ -68,9 +71,19 @@ h3 {
   bottom: 33px;
   font-size: 16px;
   color: gray;
+  margin-right: 14px;
+}
+
+.topright {
+  float: right;
+  display: inline-block;
+  position: relative;
+  top: 23px;
+  padding: 0px 10px 0px 10px;
+  font-size: 16px;
 }
 </style>
-</head>
+
 <body background="/assets/background3.jpg">
 
 <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
@@ -80,13 +93,11 @@ h3 {
             <a href="/mains" class="barlink">Home</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
             <a href="/sign_in" class="topright">Sign-in</a>
-          </form>
         </div>
     </div>
 </nav>
-
+<p class="add">Register:</p>
 <form method='post' action='/users/register'>
   <input type="hidden" name="action" value="register">
   <div class="form-group">

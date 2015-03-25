@@ -28,33 +28,6 @@ h3 {
   margin-left: 100px;
 }
 
-#signin {
-  position: relative;
-  top: 95px;
-  left: 260px;
-  margin-left: 100px;
-}
-
-
-#register {
-  position: relative;
-  top: 120px;
-  left: 105px;
-  font-size: 12px;
-}
-.navbar-brand {
-  position: relative;
-  left:  112px;
-  bottom: 47px;
-}
-
-.error {
-  color: red;
-  text-align: right;
-  position: relative;
-  left: 102px;
-}
-
 .topright, .topright1 {
   float: right;
   display: inline-block;
@@ -77,6 +50,12 @@ h3 {
   color: gray;
 }
 
+#start {
+  position: relative;
+  left: 720px;
+  top: 10px;
+  width: 130px;
+}
 </style>
 
   <body>
@@ -97,9 +76,9 @@ h3 {
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Welcome to the Test</h1>
-        <p>We're going to build a cool application using a MVC framework!  This application was built with the Coding Dojo foks!</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Start</a></p>
+        <br><h2>Welcome to User Dashboard!</h2>
+        <br><p>Please start by logging in, or registering if you do not already have an account. From there you will be taken to the user dashboard screen where you can view other users, edit your profile, and even visit other people's walls to send messages and reply to comments.</p>
+        <p><a id='start' class="btn btn-primary btn-default" href="/register" role="button">Get Started >></a></p>
       </div>
     </div>
 
@@ -108,26 +87,18 @@ h3 {
       <div class="row">
         <div class="col-md-4">
           <h2>Manage Users</h2>
-          <p>Using this application, you'll learn how to add, remove, and edit users for the application.</p>
-          <p><a class="btn btn-default" href="#" role="button">Manage Users &raquo;</a></p>
+          <p>Using this application, you can add, remove, and edit users for the application.</p>
         </div>
         <div class="col-md-4">
           <h2>Leave Messages</h2>
           <p>Users will be able to leave a message to another user using this application. </p>
-          <p><a class="btn btn-default" href="#" role="button">Leave Messages &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2>Edit User Information</h2>
-          <p>Admins will be able to edit another user's information (email address, first name, last name, etc.</p>
-          <p><a class="btn btn-default" href="#" role="button">Edit Users &raquo;</a></p>
-        </div>
+          <p>Admins will be able to edit another user's information (email address, first name, last name, etc.</p>        </div>
       </div>
 
       <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
     </div> <!-- /container -->
 
 
