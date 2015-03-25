@@ -25,12 +25,10 @@
   margin-left: 80px;
 }
 
-
-
 #signin1 {
 	position: relative;
 	top: 11px;
-  left: 250px;
+  left: 292px;
   display: inline-block;
 }
 
@@ -41,13 +39,17 @@
   display: inline-block;
 }
 
+#signin3 {
+  position: relative;
+  left: 750px;
+  bottom: 35px;
+  width: 80px;
+  display: inline-block;
+}
+
 .topright {
   position: relative;
   top: 13px;
-}
-
-h2 {
-
 }
 
 h3 {
@@ -63,7 +65,7 @@ h3 {
 }
 
 .edit {
-  text-align: center;
+  text-align: left;
 }
 
 .navbar-brand {
@@ -88,12 +90,20 @@ hr {
 textarea {
   width: 720px;
   height: 140px;
-
   resize: none;
 }
+
+p.add {
+position: relative;
+left: 60px;
+top: 120px;
+font-size: 24px;
+font-weight: 500;
+}
+
 #hr {
   position: relative;
-  top: 60px;
+  top: 140px;
 }
 #update {
   position: relative;
@@ -116,28 +126,43 @@ textarea {
 .barlink {
   display: inline-block;
   position: relative;
-  left: 110px;
+  left: 80px;
   bottom: 33px;
   font-size: 16px;
   color: gray;
+  margin-right: 15px;
+}
+
+.row {
+  position: relative;
+  top: 80px;
+}
+
+.form-group2 {
+  position: relative;
+  top: 80px;
+  right: 25px;
 }
 </style>
 
     <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
         <div class="navbar-header">
-            <h3>Welcome |</h3>
-            <a href="#" class='barlink'>Home</a>
+            <h3>Profile |</h3>
+            <a href="/mains" class='barlink'>Home </a>
+            <a href="/dashboard" class='barlink'>Users </a>
+            <a href="/edit_profile_user" class='barlink'>Profile </a>
+            <a href="/notes" class='barlink'>Messages</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
-            <a href="sign_in" class="topright1">Login</a>
+            <a href="sign_in" class="topright1">Log-off</a>
         </div>
     </div>
 </nav>
  <div class="container"> 
+   <p class="add">Edit profile:</p>
   <div class="row">
-    <p class="add">Edit profile:</p>
       <div id="border" class="col-md-6">
           <div class="form-group">
             <form method='post' action='/update_profile_user' name="user-update">
@@ -176,12 +201,12 @@ textarea {
   </div>
 <!--     <p><a id="signin" class="btn btn-success btn-default" href="#" role="button">Update Info</a></p> -->
 <hr id='hr'><div id='desc' class="col-ld-12">
-  <div class="form-group">
+  <div class="form-group2">
     <form method="post" action="/update_user_description">
-    <p id='edit'>Edit desctiption:</p>
+    <p id='edit'>Edit description:</p>
     <textarea name="description"><?= $user['description'] ?></textarea>
     <input type="hidden" name="id" value="<?= $user['id'] ?>">
-    <p><input class="btn btn-success btn-default" id="signin1" value="Save" type="submit"></p>
+    <p><input class="btn btn-success btn-default" id="signin3" value="Save" type="submit"></p>
   </form>
 </div>
 

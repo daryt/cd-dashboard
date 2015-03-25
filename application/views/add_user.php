@@ -19,30 +19,19 @@
 }
 
 .form-group {
-	position: relative;
-	top: 50px;
-	width: 350px;
-	margin-left: 100px;
+  position: relative;
+  top: 160px;
+  width: 350px;
+  margin-left: 100px;
 }
 
 #signin {
-	position: relative;
-	top: 11px;
-	left: 372px;
-  display: inline-block;
+  position: relative;
+  top: 120px;
+  left: 270px;
+  margin-left: 100px;
 }
 
-#navbar {
-	position: relative;
-	font-size: 18px;
-}
-
-#register {
-	position: relative;
-	top: 100px;
-	left: 105px;
-	font-size: 12px;
-}
 
 .topright {
   position: relative;
@@ -52,7 +41,7 @@
 p.add {
 position: relative;
 left: 60px;
-top: 20px;
+top: 120px;
 font-size: 24px;
 font-weight: 500;
 }
@@ -64,7 +53,7 @@ h3 {
 
 #return {
   position: relative;
-  top: 53px;
+  top: 163px;
   left: 102px;
   display: inline-block;
 }
@@ -96,18 +85,23 @@ h3 {
 .barlink {
   display: inline-block;
   position: relative;
-  left: 110px;
+  left: 65px;
   bottom: 33px;
   font-size: 16px;
   color: gray;
+  margin-right: 15px;
 }
 </style>
 
 <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
         <div class="navbar-header">
-            <h3>Welcome |</h3>
-            <a href="#" class='barlink'>Add</a>
+            <h3>Add |</h3>
+            <a href="/mains" class='barlink'>Home </a>
+            <a href="/admin" class='barlink'>Users </a>
+            <a href="/edit_profile_user" class='barlink'>Profile </a>
+            <a href="/notes" class='barlink'>Messages</a>
+            <a href="/add_user" class='barlink'>Add user </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
@@ -144,7 +138,7 @@ h3 {
     <input type="password" class="form-control" name="passwordconfirm" id="passwordconfirm" placeholder="Confirm password">
         <span class='error'><?php echo form_error('passwordconfirm'); ?></span>
   </div>
-  <p><a id="return" class="btn btn-primary btn-default" href="#" role="button">Return to Dashboard</a></p>
+  <p><a id="return" class="btn btn-primary btn-default" href="/admin" role="button">Return to Dashboard</a></p>
   <input type='submit' value="Register" id="signin" class="btn btn-success btn-default" role="button">
 </form>
 

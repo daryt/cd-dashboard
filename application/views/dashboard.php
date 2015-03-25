@@ -49,18 +49,25 @@ h3 {
 .barlink {
   display: inline-block;
   position: relative;
-  left: 110px;
+  left: 128px;
   bottom: 33px;
   font-size: 16px;
   color: gray;
+  margin-right: 15px;
 }
 </style>
+<?php var_dump($users); ?>
  <body background="/assets/background3.jpg">
     <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
         <div class="navbar-header">
-            <h3>Welcome |</h3>
-            <a href="#" class='barlink'>Users</a>
+            <h3>Dashboard |</h3>
+            <a href="/main" class='barlink'>Home</a>
+            <a href="/dashboard" class='barlink'>Users</a>
+
+            <a href="/user/edit/<?= $user['id']; ?>" class='barlink'>Profile</a>
+
+            <a href="/notes" class='barlink'>Messages</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>

@@ -27,12 +27,13 @@ h3 {
   margin-left: 100px;
 }
 
-.navbar-brand {
-  position: relative;
-  left:  112px;
-  bottom: 47px;
+p.add {
+position: relative;
+left: 60px;
+top: 50px;
+font-size: 24px;
+font-weight: 500;
 }
-
 
 .topright, .topright1 {
   float: right;
@@ -50,20 +51,36 @@ h3 {
 .barlink {
   display: inline-block;
   position: relative;
-  left: 110px;
+  left: 105px;
   bottom: 33px;
   font-size: 16px;
   color: gray;
+  margin-right: 14px;
 }
 
+#return {
+  display: inline-block;
+  position: relative;
+  left: 300px;
+  top: 10px;
+}
+
+table {
+  position: relative;
+  top: 40px;
+}
 </style>
-  <body>
+  <body background="/assets/background3.jpg">
 
     <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
         <div class="navbar-header">
-            <h3>Welcome |</h3>
-            <a href="#" class='barlink'>Management</a>
+            <h3>Manage |</h3>
+            <a href="/mains" class='barlink'>Home </a>
+            <a href="/admin" class='barlink'>Users </a>
+            <a href="/edit_profile_user" class='barlink'>Profile </a>
+            <a href="/notes" class='barlink'>Messages</a>
+            <a href="/add_user" class='barlink'>Add user </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
@@ -74,7 +91,9 @@ h3 {
 
     <div class="container buffer">
       <div class="starter-template">
-        <h2>Manage Users</h2>
+        <p class="add">Manage Users:</p>
+          <p><a id="return" class="btn btn-primary btn-sm" href="/add_user" role="button">Add New User</a></p>
+
         <table class="table table-striped table-bordered">
           <tr>
             <th>ID</th>
@@ -103,10 +122,6 @@ h3 {
         </table>
       </div>
     </div>
-      <hr>
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
     </div> <!-- /container -->
 
 

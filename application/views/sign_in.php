@@ -22,30 +22,32 @@ h3 {
   font-weight: 100;
 }
 .form-group {
-	position: relative;
-	top: 120px;
-	width: 350px;
-	margin-left: 100px;
+  position: relative;
+  top: 160px;
+  width: 350px;
+  margin-left: 100px;
 }
 
 #signin {
-	position: relative;
-	top: 93px;
-	left: 279px;
-	margin-left: 100px;
+  position: relative;
+  top: 130px;
+  left: 270px;
+  margin-left: 100px;
 }
 
-#navbar {
-	position: relative;
-	/*top: 4px;*/
-	font-size: 18px;
+p.add {
+position: relative;
+left: 60px;
+top: 120px;
+font-size: 24px;
+font-weight: 500;
 }
 
 #register {
-	position: relative;
-	top: 120px;
-	left: 105px;
-	font-size: 12px;
+  position: relative;
+  top: 155px;
+  left: 105px;
+  font-size: 12px;
 }
 .navbar-brand {
   position: relative;
@@ -76,7 +78,7 @@ h3 {
 .barlink {
   display: inline-block;
   position: relative;
-  left: 110px;
+  left: 75px;
   bottom: 33px;
   font-size: 16px;
   color: gray;
@@ -87,14 +89,15 @@ h3 {
 <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
         <div class="navbar-header">
-            <h3>Welcome |</h3>
-            <a href="/" class='barlink'>Home</a>
+            <h3>Login |</h3>
+            <a href="/mains" class='barlink'>Home</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
         </div>
     </div>
 </nav>
+<p class="add">Log in:</p>
 <form method='post' action='/users/sign_in_user'>
   <input type="hidden" name="action" value="login">
   <div class="form-group">
