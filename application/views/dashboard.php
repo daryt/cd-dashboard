@@ -56,6 +56,7 @@ h3 {
   margin-right: 15px;
 }
 </style>
+<?php var_dump($users); ?>
  <body background="/assets/background3.jpg">
     <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -63,7 +64,9 @@ h3 {
             <h3>Dashboard |</h3>
             <a href="/main" class='barlink'>Home</a>
             <a href="/dashboard" class='barlink'>Users</a>
-            <a href="/edit_profile_user" class='barlink'>Profile</a>
+
+            <a href="/user/edit/<?= $user['id']; ?>" class='barlink'>Profile</a>
+
             <a href="/notes" class='barlink'>Messages</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">

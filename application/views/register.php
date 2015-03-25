@@ -9,6 +9,7 @@
     <!-- Bootstrap core CSS -->
     <link href="/assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
+
     </head>
 <style>
 #navbar {
@@ -82,6 +83,7 @@ font-weight: 500;
   padding: 0px 10px 0px 10px;
   font-size: 16px;
 }
+
 </style>
 
 <body background="/assets/background3.jpg">
@@ -98,7 +100,7 @@ font-weight: 500;
     </div>
 </nav>
 <p class="add">Register:</p>
-<form method='post' action='/users/register'>
+<form method='post' id="contact-form" action='/users/register'>
   <input type="hidden" name="action" value="register">
   <div class="form-group">
     <label for="firstname">First Name</label>
@@ -134,3 +136,4 @@ font-weight: 500;
 
 </body>
 </html>
+
