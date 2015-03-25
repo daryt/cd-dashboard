@@ -19,6 +19,10 @@ $route['update_profile_user'] = 'users/updateProfileUser';
 $route['update_user_description'] = 'users/updateUserDescription';
 $route['update_user_password'] = 'users/updateUserPassword';
 $route['update_user_password_admin'] = 'admins/updateUserPasswordAdmin';
+$route['post_message'] = 'mains/postMessage';
+$route['create_comment'] = 'mains/createComment';
+
+
 
 
 

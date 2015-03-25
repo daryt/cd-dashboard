@@ -86,6 +86,7 @@ public function edit_profile_user($id)
     $result = $this->user->updateUserPassword($this->input->post());
     redirect("/dashboard");
   }
+
 }
 
 //end of main controller

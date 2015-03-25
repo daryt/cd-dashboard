@@ -179,7 +179,7 @@ textarea {
   <div class="form-group">
     <form method="post" action="/update_user_description">
     <p id='edit'>Edit desctiption:</p>
-    <textarea name="description"><?= $user['description'] ?>"</textarea>
+    <textarea name="description"><?= $user['description'] ?></textarea>
     <input type="hidden" name="id" value="<?= $user['id'] ?>">
     <p><input class="btn btn-success btn-default" id="signin1" value="Save" type="submit"></p>
   </form>
