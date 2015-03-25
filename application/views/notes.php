@@ -7,9 +7,9 @@
   <meta name="description" content="Notes">
   <title>Notes</title>
   <!-- Bootstrap core CSS -->
-  <link href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link href="/assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.4-dist/js/bootstrap.min.js">
+  <link rel="stylesheet" href="/assets/styles.css">
   <style>
   #navbar {
     height: 65px;
@@ -65,12 +65,12 @@
 </nav>
 <div class= "row buffer">
   <div class="col-md-7 col-md-offset-1">
-    <p>Michael Choi</p>
+    <p><?= $user['first_name'] ?></p>
     <ul>
-      <li>Registered at:</li>
-      <li>User ID:</li>
-      <li>Email address:</li>
-      <li>Description:</li>
+      <li>Registered at: <?= $user['created_at'] ?></li>
+      <li>User ID: <?= $user['id'] ?></li>
+      <li>Email address: <?= $user['email'] ?></li>
+      <li>Description: <?= $user['description'] ?></li>
     </ul>
   </div>
 </div>
@@ -78,9 +78,9 @@
 <div class="row buffer">
   <div class="col-md-7 col-md-offset-1">
     <form action="/post_message" method='post' class="form-group">
-      <p>Post a message</p>
+      <p>Leave a message for <?= $user['first_name'] ?></p>
         <textarea class="form-control" rows="5" name="message" placeholder="Post your message!"></textarea>
-        <input name="action" value ="post-message" type="hidden">
+        <input name="user_id" value ="<?= $user['id'] ?>" type="hidden">
         <input class="btn btn-primary col-md-offset-10 pull-right" name="submit" value ="Post message" type="submit">
       </form>
     </div>
@@ -120,6 +120,7 @@
         <p>Post a comment </p>
           <textarea class="form-control" rows="3" name="comment" placeholder="Post your comment!"></textarea>
           <input type="hidden" name="message_id" value="<?= $message['id'] ?>">
+          <input name="user_id" value ="<?= $user['id'] ?>" type="hidden">
           <input class="btn btn-success col-md-offset-9 pull-right" value ="Post comment" type="submit">
         </form>
       </div>

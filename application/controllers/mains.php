@@ -10,25 +10,33 @@ class Mains extends CI_Controller {
 		$this->load->view('mains');
 	}
 
-  public function notes()
+  public function notes($userID)
   {
     $this->load->model('main');
-    $messages = $this->main->getAllMessages();
+    $messages = $this->main->getAllMessages($userID);
     $comments = $this->main->getAllComments();
-    $view_data = array('messages' => $messages, 'comments' => $comments);
+    $this->load->model('user');
+    $user = $this->user->lookupUser($userID);
+    $view_data = array('messages' => $messages, 'comments' => $comments, 'user' => $user);
+    // echo "<pre>";
+    // var_dump($view_data);
+    // var_dump($view_data['user_id']);
+    // die();
     $this->load->view('notes', $view_data);
   }
 
   public function postMessage() {
     $this->load->model('main');
     $result = $this->main->newMessage($this->input->post());
-    redirect("/notes");
+    $user_id = $this->input->post('user_id');
+    redirect("/users/show/".$user_id."");
   }
 
   public function createComment() {
     $this->load->model('main');
     $result = $this->main->createComment($this->input->post());
-    redirect("/notes");
+    $user_id = $this->input->post('user_id');
+    redirect("/users/show/".$user_id."");
   }
 }
 

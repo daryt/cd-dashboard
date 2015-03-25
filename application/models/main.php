@@ -9,9 +9,9 @@ class Main extends CI_Model {
     return $result;
   }
 
-  public function getAllMessages() {
-    $query = "SELECT first_name, content, messages.id, messages.created_at FROM users RIGHT JOIN messages on messages.user_id = users.id";
-    $messages = $this->db->query($query) -> result_array();
+  public function getAllMessages($userID) {
+    $query = "SELECT first_name, content, messages.id, messages.created_at FROM users RIGHT JOIN messages on messages.user_id = users.id WHERE users.id = ?;";
+    $messages = $this->db->query($query, array($userID)) -> result_array();
     return $messages;
   }
  public function getAllComments() {
