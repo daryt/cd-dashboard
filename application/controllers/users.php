@@ -41,6 +41,7 @@ class Users extends CI_Controller {
           'last_name' => $user['last_name'],
           'logged_in' => true);
         // $result = $this->user->getUserEmail($this->input->post());
+        $this->session->set_userdata($user);
         redirect('/dashboard');
       }
       else
@@ -85,6 +86,11 @@ public function edit_profile_user($id)
     $this->load->model('user');
     $result = $this->user->updateUserPassword($this->input->post());
     redirect("/dashboard");
+  }
+
+  public function logoff() {
+    $this->session->sess_destroy();
+    redirect('/');
   }
 
 }
