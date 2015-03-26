@@ -78,13 +78,13 @@ table {
             <h3>Manage |</h3>
             <a href="/mains" class='barlink'>Home </a>
             <a href="/admin" class='barlink'>Users </a>
-            <a href="/edit_profile_user" class='barlink'>Profile </a>
+            <a href="/user/edit/<?= $this->session->userdata['user_id']; ?>" class='barlink'>Profile</a>
             <a href="/notes" class='barlink'>Messages</a>
             <a href="/add_user" class='barlink'>Add user </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
-            <a href="sign_in" class="topright1">Log-off</a>
+            <a href="/logoff" class="topright1">Log-off</a>
         </div>
     </div>
 </nav>

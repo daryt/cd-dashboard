@@ -17,7 +17,7 @@ class Users extends CI_Controller {
     else
     {
       $result = $this->user->userCreate($this->input->post()); //passing registration info to model
-      $this->load->view('edit_profile_user');
+      redirect('/sign_in');
     }
   }
 
@@ -39,7 +39,10 @@ class Users extends CI_Controller {
           'email' => $user['email'],
           'first_name' => $user['first_name'],
           'last_name' => $user['last_name'],
+          'user_level' => $user['user_level'],
           'logged_in' => true);
+          $this->session->set_userdata($user);
+
         redirect('/admin');
       }
       else if ($user && $user['password'] == $password)
@@ -49,6 +52,7 @@ class Users extends CI_Controller {
           'email' => $user['email'],
           'first_name' => $user['first_name'],
           'last_name' => $user['last_name'],
+          'user_level' => $user['user_level'],
           'logged_in' => true);
         // $result = $this->user->getUserEmail($this->input->post());
         $this->session->set_userdata($user);
@@ -75,9 +79,16 @@ class Users extends CI_Controller {
 
 public function edit_profile_user($id)
   {
-    $this->load->model('user');
-    $user = $this->user->lookupUser($id);
-    $this->load->view('edit_profile_user', array('user' => $user));
+    if ( $this->session->userdata['user_id'] == $id)
+     { 
+      $this->load->model('user');
+      $user = $this->user->lookupUser($id);
+      $this->load->view('edit_profile_user', array('user' => $user));
+    }
+    else 
+    {
+      redirect("/dashboard");
+    }
   }
 
     public function updateProfileUser() {
@@ -100,6 +111,7 @@ public function edit_profile_user($id)
 
   public function logoff() {
     $this->session->sess_destroy();
+    $this->session->all_userdata();
     redirect('/');
   }
 

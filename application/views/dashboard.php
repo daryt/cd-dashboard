@@ -61,16 +61,21 @@ h3 {
   <div class="container">
         <div class="navbar-header">
             <h3>Dashboard |</h3>
-            <a href="/main" class='barlink'>Home</a>
+            <a href="/" class='barlink'>Home</a>
             <a href="/dashboard" class='barlink'>Users</a>
-
+            <?php
+            if($this->session->userdata['user_level'] == 9)
+            {
+              echo "<a href='/admin' class='barlink'>Admin Dashboard </a>";
+            }
+?>
             <a href="/user/edit/<?= $this->session->userdata['user_id']; ?>" class='barlink'>Profile</a>
 
-            <a href="/notes" class='barlink'>Messages</a>
+            <a href="/users/show/<?= $this->session->userdata['user_id']; ?>" class='barlink'>Messages</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
-            <a href="logoff" class="topright1">Log-off</a>
+            <a href="/logoff" class="topright1">Log-off</a>
         </div>
     </div>
 </nav>

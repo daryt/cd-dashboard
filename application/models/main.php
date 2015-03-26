@@ -5,7 +5,7 @@ class Main extends CI_Model {
 
   public function newMessage($message) {
     $query = "INSERT INTO messages (user_id, content, created_at, updated_at) VALUES (?, ?, NOW(), NOW());";
-    $result = $this->db->query($query, array(1, $message['message']));
+    $result = $this->db->query($query, array($this->session->userdata['user_id'], $message['message']));
     return $result;
   }
 
@@ -24,8 +24,8 @@ class Main extends CI_Model {
   }
 
   public function createComment($comment) {
-    $query = "INSERT INTO comments (user_id, comment, created_at, updated_at, messages_id) VALUES (1, ?, NOW(), NOW(), ?);";
-    $result = $this->db->query($query, array($comment['comment'], $comment['message_id']));
+    $query = "INSERT INTO comments (user_id, comment, created_at, updated_at, messages_id) VALUES (?, ?, NOW(), NOW(), ?);";
+    $result = $this->db->query($query, array($this->session->userdata['user_id'],$comment['comment'], $comment['message_id']));
     return $result;
   }
 

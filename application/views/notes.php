@@ -1,3 +1,31 @@
+<?php function nicetime($date)
+{
+    date_default_timezone_set('America/Los_Angeles');
+    
+    $periods         = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
+    $lengths         = array("60","60","24","7","4.35","12","10");
+    
+    $now             = time();
+    $unix_date         = strtotime($date);
+
+    // is it future date or past date
+    $difference     = $now - $unix_date;
+    $tense         = "ago";
+    
+    for($j = 0; $difference >= $lengths[$j] && $j < count($lengths)-1; $j++) {
+        $difference /= $lengths[$j];
+    }
+    
+    $difference = round($difference);
+    
+    if($difference != 1) {
+        $periods[$j].= "s";
+    }
+    
+    return "$difference $periods[$j] {$tense}";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,17 +90,12 @@
             <a href="/mains" class='barlink'>Home</a>
             <a href="/dashboard" class='barlink'>Users</a>
             <a href="/edit_profile_user" class='barlink'>Profile</a>
-            <a href="/notes" class='barlink'>Messages</a>
+            <a href="/users/show/<?= $this->session->userdata['user_id']; ?>" class='barlink'>Messages</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
-            <a href="/" class="topright1">Log off</a>
+            <a href="/logoff" class="topright1">Log off</a>
         </div>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <a href="register" class="topright">Register</a>
-      <a href="sign_in" class="topright1">Log-off</a>
-    </div>
   </div>
 </nav>
 <div class= "row buffer">
@@ -104,7 +127,7 @@
 ?> 
   <div class="row">
       <div class="col-md-7 col-md-offset-1">
-        <p><?= $message['first_name'] ?> wrote <?= $message['created_at'] ?> ago </p>
+        <p><?= $message['first_name'] ?> wrote <?= nicetime($message['created_at']); ?></p>
           <p><?= $message['content'] ?></p>
       </div>
   </div>
@@ -113,12 +136,12 @@
 <?php  foreach (array_reverse($comments) as $comment) {
           if ($comment['messages_id'] == $message['id'])
           {
-            $phpdate = strtotime($comment['created_at']);
+            $phpdate = strtotime(nicetime($comment['created_at']));
             $mysqldate1 = date('F jS Y', $phpdate);
 ?>
   <div class="row">
       <div class="col-md-7 col-md-offset-2">
-        <p><?= $comment['first_name'] ?> wrote <?= $comment['created_at'] ?> ago </p>
+        <p><?= $comment['first_name'] ?> wrote <?= nicetime($comment['created_at']) ?></p>
           <p><?= $comment['comment'] ?></p>
       </div>
   </div>

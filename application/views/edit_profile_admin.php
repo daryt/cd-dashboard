@@ -136,7 +136,7 @@ textarea {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
-            <a href="sign_in" class="topright1">Log-off</a>
+            <a href="/logoff" class="topright1">Log-off</a>
         </div>
     </div>
 </nav>
