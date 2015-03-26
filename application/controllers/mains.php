@@ -12,17 +12,24 @@ class Mains extends CI_Controller {
 
   public function notes($userID)
   {
-    $this->load->model('main');
-    $messages = $this->main->getAllMessages($userID);
-    $comments = $this->main->getAllComments();
-    $this->load->model('user');
-    $user = $this->user->lookupUser($userID);
-    $view_data = array('messages' => $messages, 'comments' => $comments, 'user' => $user);
-    // echo "<pre>";
-    // var_dump($view_data);
-    // var_dump($view_data['user_id']);
-    // die();
-    $this->load->view('notes', $view_data);
+    if (isset($this->session->userdata['logged_in']))
+      {
+      $this->load->model('main');
+      $messages = $this->main->getAllMessages($userID);
+      $comments = $this->main->getAllComments();
+      $this->load->model('user');
+      $user = $this->user->lookupUser($userID);
+      $view_data = array('messages' => $messages, 'comments' => $comments, 'user' => $user);
+      // echo "<pre>";
+      // var_dump($view_data);
+      // var_dump($view_data['user_id']);
+      // die();
+      $this->load->view('notes', $view_data);
+    }
+    else
+    {
+      redirect("/");
+    }
   }
 
   public function postMessage() {

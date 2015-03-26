@@ -105,13 +105,13 @@ h3 {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
-            <a href="sign_in" class="topright1">Log-off</a>
+            <a href="/logoff" class="topright1">Log-off</a>
         </div>
     
 </nav>
 
 <p class="add">Add a new user:</p>
-<form method='post' action='/admins/add_user'>
+<form method='post' action='/users/register'>
   <input type="hidden" name="action" value="register">
   <div class="form-group">
     <label for="firstname">First Name</label>

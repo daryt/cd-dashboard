@@ -44,10 +44,11 @@ h3 {
 .barlink {
   display: inline-block;
   position: relative;
-  left: 110px;
+  left: 105px;
   bottom: 33px;
   font-size: 16px;
   color: gray;
+  margin-right: 14px;
 }
 
 #start {
@@ -64,11 +65,27 @@ h3 {
   <div class="container">
         <div class="navbar-header">
             <h3>Welcome |</h3>
-            <a href="#" class='barlink'>Home</a>
+            <a href="#" class='barlink'> Home </a>
+            <?php
+              if($this->session->userdata('logged_in'))
+              {
+                echo "<a href='/dashboard' class='barlink'>Users </a>";
+                echo "<a href='/admin' class='barlink'>Admin Dashboard </a>";
+              }
+?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a href="register" class="topright">Register</a>
-            <a href="sign_in" class="topright1">Login</a>
+<?php
+              if($this->session->userdata('logged_in'))
+              {
+                echo "<a href='/logoff' class='topright1'>Logoff</a>";
+              }
+              else 
+              {
+                echo '<a href="sign_in" class="topright1">Login</a> ';
+              }
+?>
         </div>
     </div>
 </nav>
